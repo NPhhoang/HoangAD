@@ -66,7 +66,7 @@ var ambientLight = new THREE.AmbientLight(0x111111);
 
  const loader = new THREE.OBJLoader();
  loader.setPath('scrCom/sketch/');
- const mtlloader = new THREE.MTLLoader();
+ var mtlloader// = new THREE.MTLLoader();
  mtlloader.setPath('scrCom/sketch/');
 
 new Promise((resolve)=>{
