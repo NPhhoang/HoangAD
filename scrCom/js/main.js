@@ -53,8 +53,8 @@ hlight = new THREE.AmbientLight(0x404040,100);
 
 // hlight = new THREE.AmbientLight(0x404040,100);
 // camera.rotation.y = 45/180*Math.PI;
-camera.position.x = 100;
-camera.position.y=100;
+// camera.position.x = 100;
+// camera.position.y=100;
 camera.position.z = 100;
 // scene.add(hlight);
 // directionLight = new THREE.DirectionalLight(0xffffff,100);
