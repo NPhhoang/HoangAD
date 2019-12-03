@@ -5,13 +5,23 @@ function init() {
 scene= new THREE.Scene();
 scene.background = new THREE.Color(0xdddddd);
 camera = new THREE.PerspectiveCamera(40, window.innerWidth/window.innerHeight, 1, 5000);
- camera.rotation.y =  45/180*Math.PI;
- camera.position.x = 2;
+ camera.rotation.z =  10/180*Math.PI;
+ camera.position.set(2,1,10);
+ //camera.position.x = 2;
 // camera.position.y = 2;
 // camera.position.z = 2;
 
 hlight = new THREE.AmbientLight(0x404040, 100);
 scene.add(hlight);
+
+drLight = new THREE.DirectionalLight(0xffffff,100);
+drLight.position.set(0,1,0);
+drLight.castShadow = true;
+scene.add(drLight);
+
+light = new THREE.PointLight(0xc4c4c4,100);
+light.position.set(2,1,10);
+
 renderer = new THREE.WebGLRenderer({antialias:true});
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);

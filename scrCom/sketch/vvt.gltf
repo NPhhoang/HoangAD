@@ -17,10 +17,20 @@
     "nodes" : [
         {
             "mesh" : 0,
-            "name" : "Cube"
+            "name" : "Cube",
+            "scale" : [
+                0.5,
+                0.5,
+                0.5
+            ],
+            "translation" : [
+                0,
+                1,
+                0
+            ]
         },
         {
-            "name" : "Light",
+            "name" : "Lamp",
             "rotation" : [
                 0.16907575726509094,
                 0.7558803558349609,
@@ -28,9 +38,9 @@
                 0.570947527885437
             ],
             "translation" : [
-                4.076245307922363,
-                5.903861999511719,
-                -1.0054539442062378
+                4.072309970855713,
+                5.846065521240234,
+                -1.0372029542922974
             ]
         },
         {
@@ -42,9 +52,9 @@
                 0.7804827094078064
             ],
             "translation" : [
-                7.358891487121582,
-                4.958309173583984,
-                6.925790786743164
+                7.481131553649902,
+                5.34366512298584,
+                6.5076398849487305
             ]
         }
     ],
@@ -52,23 +62,19 @@
         {
             "doubleSided" : true,
             "name" : "Material.001",
-            "pbrMetallicRoughness" : {
-                "metallicFactor" : 0,
-                "roughnessFactor" : 0.5
-            }
+            "pbrMetallicRoughness" : {}
         }
     ],
     "meshes" : [
         {
-            "name" : "Cube",
+            "name" : "Cube.001",
             "primitives" : [
                 {
                     "attributes" : {
                         "POSITION" : 0,
-                        "NORMAL" : 1,
-                        "TEXCOORD_0" : 2
+                        "NORMAL" : 1
                     },
-                    "indices" : 3,
+                    "indices" : 2,
                     "material" : 0
                 }
             ]
@@ -78,7 +84,7 @@
         {
             "bufferView" : 0,
             "componentType" : 5126,
-            "count" : 14,
+            "count" : 24,
             "max" : [
                 1,
                 1,
@@ -94,17 +100,11 @@
         {
             "bufferView" : 1,
             "componentType" : 5126,
-            "count" : 14,
+            "count" : 24,
             "type" : "VEC3"
         },
         {
             "bufferView" : 2,
-            "componentType" : 5126,
-            "count" : 14,
-            "type" : "VEC2"
-        },
-        {
-            "bufferView" : 3,
             "componentType" : 5123,
             "count" : 36,
             "type" : "SCALAR"
@@ -113,29 +113,24 @@
     "bufferViews" : [
         {
             "buffer" : 0,
-            "byteLength" : 168,
+            "byteLength" : 288,
             "byteOffset" : 0
         },
         {
             "buffer" : 0,
-            "byteLength" : 168,
-            "byteOffset" : 168
-        },
-        {
-            "buffer" : 0,
-            "byteLength" : 112,
-            "byteOffset" : 336
+            "byteLength" : 288,
+            "byteOffset" : 288
         },
         {
             "buffer" : 0,
             "byteLength" : 72,
-            "byteOffset" : 448
+            "byteOffset" : 576
         }
     ],
     "buffers" : [
         {
-            "byteLength" : 520,
-            "uri" : "data:application/octet-stream;base64,AACAPwAAgD8AAIA/AACAPwAAgD8AAIC/AACAvwAAgD8AAIC/AACAvwAAgD8AAIA/AACAvwAAgD8AAIA/AACAvwAAgL8AAIA/AACAPwAAgL8AAIA/AACAvwAAgD8AAIC/AACAvwAAgL8AAIC/AACAvwAAgL8AAIA/AACAvwAAgD8AAIA/AACAvwAAgL8AAIA/AACAvwAAgL8AAIC/AACAPwAAgL8AAIC/KM0TPyjNEz8ozRM/KM0TPyjNEz8ozRO/KM0TvyjNEz8ozRO/KM0TvyjNEz8ozRM/KM0TvyjNEz8ozRM/KM0TvyjNE78ozRM/KM0TPyjNE78ozRM/KM0TvyjNEz8ozRO/KM0TvyjNE78ozRO/KM0TvyjNE78ozRM/KM0TvyjNEz8ozRM/KM0TvyjNE78ozRM/KM0TvyjNE78ozRO/KM0TPyjNE78ozRO/AAAgPwAAgD4AACA/AAAAPwAAYD8AAAA/AABgPwAAgD4AACA/AAAAAAAAwD4AAAAAAADAPgAAgD4AACA/AABAPwAAwD4AAEA/AADAPgAAgD8AACA/AACAPwAAAD4AAIA+AAAAPgAAAD8AAMA+AAAAPwAAAQACAAAAAgADAAQABQAGAAQABgAAAAcACAAJAAcACQAKAAsADAANAAsADQAGAAAABgANAAAADQABAAEADQAIAAEACAAHAA=="
+            "byteLength" : 648,
+            "uri" : "data:application/octet-stream;base64,AACAvwAAgD8AAIC/AACAvwAAgL8AAIC/AACAvwAAgL8AAIA/AACAvwAAgD8AAIA/AACAPwAAgD8AAIC/AACAPwAAgL8AAIC/AACAvwAAgL8AAIC/AACAvwAAgD8AAIC/AACAPwAAgD8AAIA/AACAPwAAgL8AAIA/AACAPwAAgL8AAIC/AACAPwAAgD8AAIC/AACAvwAAgD8AAIA/AACAvwAAgL8AAIA/AACAPwAAgL8AAIA/AACAPwAAgD8AAIA/AACAvwAAgL8AAIA/AACAvwAAgL8AAIC/AACAPwAAgL8AAIC/AACAPwAAgL8AAIA/AACAPwAAgD8AAIA/AACAPwAAgD8AAIC/AACAvwAAgD8AAIC/AACAvwAAgD8AAIA/AACAvwAAAAAAAAAAAACAvwAAAAAAAAAAAACAvwAAAAAAAAAAAACAvwAAAAAAAAAAAAAAAAAAAAAAAIC/AAAAAAAAAAAAAIC/AAAAAAAAAAAAAIC/AAAAAAAAAAAAAIC/AACAPwAAAAAAAAAAAACAPwAAAAAAAAAAAACAPwAAAAAAAAAAAACAPwAAAAAAAAAAAAAAAAAAAAAAAIA/AAAAAAAAAAAAAIA/AAAAAAAAAAAAAIA/AAAAAAAAAAAAAIA/AAAAAAAAgL8AAACAAAAAAAAAgL8AAACAAAAAAAAAgL8AAACAAAAAAAAAgL8AAACAAAAAAAAAgD8AAAAAAAAAAAAAgD8AAAAAAAAAAAAAgD8AAAAAAAAAAAAAgD8AAAAAAAABAAIAAAACAAMABAAFAAYABAAGAAcACAAJAAoACAAKAAsADAANAA4ADAAOAA8AEAARABIAEAASABMAFAAVABYAFAAWABcA"
         }
     ]
 }
