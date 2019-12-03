@@ -76,8 +76,8 @@ var ambientLight = new THREE.AmbientLight(0x111111);
  //mtlloader.setPath('scrCom/sketch/');
 
  loader.load('scrCom/sketch/vvt.obj',(object)=>{
-    var  material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
-     			var cube = new THREE.Mesh( object, material );
+    mtlloader = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
+     			var cube = new THREE.Mesh( object, mtlloader );
     scene.add(cube);
 }, undefined, function ( error ) { console.error( error ); });
 
