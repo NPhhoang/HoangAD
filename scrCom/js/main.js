@@ -73,6 +73,7 @@ document.body.appendChild( renderer.domElement );
  new Promise((resolve)=>{
             mtlloader.load('scrCom/sketch/vvt.mtl',(materials)=>{
                 resolve(materials);
+            }, undefined, function ( error ) { console.error( error );
             })}).then((materials)=>{
                 materials.preload();
             loader.setMaterials(materials);
