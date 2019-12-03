@@ -57,9 +57,7 @@ var renderer = new THREE.WebGLRenderer({antialias:true});
 renderer.setSize( window.innerWidth, window.innerHeight );
 renderer.setClearColor(0x000000);
 document.body.appendChild( renderer.domElement );
-const light = new THREE.DirectionalLight('#ffffff', 0.9);
-light.position.set(-20,0,100);
-scene.add(light);
+
 var ambientLight = new THREE.AmbientLight(0x111111);
  scene.add(ambientLight);
 
