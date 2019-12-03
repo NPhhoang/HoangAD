@@ -1,5 +1,6 @@
 
 let scene, camera, renderer;
+let apart;
 function init() {
 scene= new THREE.Scene();
 scene.background = new THREE.Color(0xdddddd);
