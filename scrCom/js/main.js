@@ -66,7 +66,7 @@ var ambientLight = new THREE.AmbientLight(0x111111);
 //  var light = new THREE.PointLight( 0xFFFFDD );
 //  light.position.set( -15, 10, 15 );
 //  scene.add( light );
- const light = new THREE.DirectionalLight('#ffffff', 0.9);
+ var light = new THREE.DirectionalLight('#ffffff', 0.9);
  light.position.set(-20,0,100);
  scene.add(light);
 
