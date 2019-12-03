@@ -50,7 +50,8 @@ hlight = new THREE.AmbientLight(0x404040,100);
             directionLight.position.set(0,1,0);
             directionLight.castShadow = true;
             scene.add(directionLight);
-
+            var bg = new THREE.MeshBasicMaterial( { color: 0xffffff } );
+            scene.background = bg;
 // hlight = new THREE.AmbientLight(0x404040,100);
 // camera.rotation.y = 45/180*Math.PI;
 // camera.position.x = 100;
@@ -76,7 +77,8 @@ document.body.appendChild( renderer.domElement );
             mtlloader.load('scrCom/sketch/vvt.mtl',(materials)=>{
                 resolve(materials);
             }, undefined, function ( error ) { console.error( error );
-            })}).then((materials)=>{
+            })
+        }).then((materials)=>{
                 materials.preload();
             loader.setMaterials(materials);
             loader.load('scrCom/sketch/vvt.obj',(object)=>{
