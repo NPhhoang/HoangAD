@@ -57,13 +57,18 @@ var renderer = new THREE.WebGLRenderer({antialias:true});
 renderer.setSize( window.innerWidth, window.innerHeight );
 renderer.setClearColor(0x000000);
 document.body.appendChild( renderer.domElement );
-
+const light = new THREE.DirectionalLight('#ffffff', 0.9);
+light.position.set(-20,0,100);
+scene.add(light);
 var ambientLight = new THREE.AmbientLight(0x111111);
  scene.add(ambientLight);
 
- var light = new THREE.PointLight( 0xFFFFDD );
- light.position.set( -15, 10, 15 );
- scene.add( light );
+//  var light = new THREE.PointLight( 0xFFFFDD );
+//  light.position.set( -15, 10, 15 );
+//  scene.add( light );
+ const light = new THREE.DirectionalLight('#ffffff', 0.9);
+ light.position.set(-20,0,100);
+ scene.add(light);
 
  const loader = new THREE.OBJLoader();
  //loader.setPath('scrCom/sketch/');
@@ -71,7 +76,9 @@ var ambientLight = new THREE.AmbientLight(0x111111);
  //mtlloader.setPath('scrCom/sketch/');
 
  loader.load('scrCom/sketch/vvt.obj',(object)=>{
-    scene.add(object);
+    const  material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
+     			var cube = new THREE.Mesh( object, material );
+    scene.add(cube);
 }, undefined, function ( error ) { console.error( error ); });
 
 // new Promise((resolve)=>{
