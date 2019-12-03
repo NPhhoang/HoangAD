@@ -67,9 +67,9 @@ renderer.setClearColor(0x000000);
 document.body.appendChild( renderer.domElement );
 
  const loader = new THREE.OBJLoader();
- loader.setPath('scrCom/sketch/');
+// loader.setPath('scrCom/sketch/');
  var mtlloader = new THREE.MTLLoader();
- mtlloader.setPath('scrCom/sketch/');
+ //mtlloader.setPath('scrCom/sketch/');
  new Promise((resolve)=>{
             mtlloader.load('scrCom/sketch/vvt.mtl',(materials)=>{
                 resolve(materials);
