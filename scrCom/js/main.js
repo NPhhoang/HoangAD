@@ -20,7 +20,15 @@ drLight.castShadow = true;
 scene.add(drLight);
 
 light = new THREE.PointLight(0xc4c4c4,100);
-light.position.set(2,1,10);
+light.position.set(1,1,0);
+light1 = new THREE.PointLight(0xc4c4c4,100);
+light1.position.set(0,1,1);
+light2 = new THREE.PointLight(0xc4c4c4,100);
+light2.position.set(1,0,1);
+light3 = new THREE.PointLight(0xc4c4c4,100);
+light3.position.set(0,0,0);
+
+scene.add(light, light1, light2, light3);
 
 renderer = new THREE.WebGLRenderer({antialias:true});
 renderer.setSize(window.innerWidth, window.innerHeight);
