@@ -89,7 +89,10 @@ document.body.appendChild( renderer.domElement );
                 scene.add(apart);
 }, undefined, function ( error ) { console.error( error ); })});
 
-
+var geometry = new THREE.BoxGeometry( 1, 1, 1 );
+			var material = new THREE.MeshBasicMaterial( { color: 0xffffff } );
+			var cube = new THREE.Mesh( geometry, material );
+			scene.add( cube );
 renderer.render( scene, camera );
 
 
