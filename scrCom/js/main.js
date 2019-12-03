@@ -93,7 +93,6 @@ document.body.appendChild( renderer.domElement );
 renderer.render( scene, camera );
 
 
-
 // new Promise((resolve)=>{
 //     //loader.load('vvt.obj'), (obj)=>{
 //         mtlloader = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
