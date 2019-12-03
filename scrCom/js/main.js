@@ -67,15 +67,18 @@ renderer.setClearColor(0x000000);
 document.body.appendChild( renderer.domElement );
 
  const loader = new THREE.OBJLoader();
- //loader.setPath('scrCom/sketch/');
- var mtlloader// = new THREE.MTLLoader();
- //mtlloader.setPath('scrCom/sketch/');
-
- loader.load('scrCom/sketch/vvt.obj',(object)=>{
-    mtlloader = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
-     			var cube = new THREE.Mesh( object, mtlloader );
-    scene.add(cube);
-}, undefined, function ( error ) { console.error( error ); });
+ loader.setPath('scrCom/sketch/');
+ var mtlloader = new THREE.MTLLoader();
+ mtlloader.setPath('scrCom/sketch/');
+ new Promise((resolve)=>{
+            mtlloader.load('scrCom/sketch/vvt.mtl',(materials)=>{
+                resolve(materials);
+            })}).then((materials)=>{
+                materials.preload();
+            loader.setMaterials(materials);
+            loader.load('scrCom/sketch/vvt.obj',(object)=>{
+                scene.add(object);
+}, undefined, function ( error ) { console.error( error ); })});
 
 
 renderer.render( scene, camera );
