@@ -66,7 +66,7 @@ var ambientLight = new THREE.AmbientLight(0x111111);
 var loader = new THREE.ColladaLoader();
 //loader.setTranscoderPath('scrCom/sketch/');
 //loader.detectSupport(render);
-loader.load('scrCom/sketch/vvt.dae', function(apart){
+loader.load('scrCom/sketch/vvt1.dae', function(apart){
     // var material = new THREE.MeshFaceMaterial(null);
     // apartModel = new THREE.Mesh(geometry, material);
     // apart.scale.set(0.5,0.5,0.5);
