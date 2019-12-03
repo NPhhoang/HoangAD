@@ -78,10 +78,8 @@ new Promise((resolve)=>{
         loader.setMaterial(materials);
         loader.load('scrCom/sketch/vvt.obj',(object)=>{
             scene.add(object);
-        })
+        }, undefined, function ( error ) { console.error( error ); })
     })
-
- loader.load( 'scrCom/sketch/vvt.glb', function ( gltf ) { scene.add( gltf.scene ); }, undefined, function ( error ) { console.error( error ); } );
 
 // var loader = new THREE.GLTF();
 // //loader.setTranscoderPath('scrCom/sketch/');
