@@ -54,6 +54,7 @@ camera.position.y = 1;
 // scene.add(directionLight);
 var renderer = new THREE.WebGLRenderer({antialias:true});
 renderer.setSize( window.innerWidth, window.innerHeight );
+renderer.setClearColor(0x000000);
 document.body.appendChild( renderer.domElement );
 
 var ambientLight = new THREE.AmbientLight(0x111111);
@@ -63,7 +64,24 @@ var ambientLight = new THREE.AmbientLight(0x111111);
  light.position.set( -15, 10, 15 );
  scene.add( light );
 
- var loader = new THREE.GLTFLoader(); loader.load( 'scrCom/sketch/vvt.glb', function ( gltf ) { scene.add( gltf.scene ); }, undefined, function ( error ) { console.error( error ); } );
+ const loader = new THREE.OBJLoader();
+ loader.setPath('scrCom/sketch/');
+ const mtlloader = new THREE.MTLLoader();
+ mtlloader.setPath('scrCom/sketch/');
+
+new Promise((resolve)=>{
+    //loader.load('vvt.obj'), (obj)=>{
+        mtlloader = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
+        resolve(mtlloader);
+    }).then((materials)=>{
+        materials.preload();
+        loader.setMaterial(materials);
+        loader.load('vvt.obj',(object)=>{
+            scene.add(object);
+        })
+    })
+
+ loader.load( 'scrCom/sketch/vvt.glb', function ( gltf ) { scene.add( gltf.scene ); }, undefined, function ( error ) { console.error( error ); } );
 
 // var loader = new THREE.GLTF();
 // //loader.setTranscoderPath('scrCom/sketch/');
