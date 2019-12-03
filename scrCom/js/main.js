@@ -67,10 +67,11 @@ var loader = new THREE.ColladaLoader();
 //loader.setTranscoderPath('scrCom/sketch/');
 //loader.detectSupport(render);
 loader.load('scrCom/sketch/vvt1.dae', function(apart){
+    var material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
     // var material = new THREE.MeshFaceMaterial(null);
     // apartModel = new THREE.Mesh(geometry, material);
     // apart.scale.set(0.5,0.5,0.5);
     // apart.position.y +=0.5;
-    scene.add(apart);
+    scene.add(apart, material);
 });
 renderer.render(scene,camera);
