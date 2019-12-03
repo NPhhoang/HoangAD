@@ -74,7 +74,7 @@ document.body.appendChild( renderer.domElement );
  //mtlloader.setPath('scrCom/sketch/');
  new Promise((resolve)=>{
             mtlloader.load('scrCom/sketch/vvt.mtl',(materials)=>{
-                mtl = new THREE.MeshLambertMaterial({ map: THREE.ImageUtils.loadTexture("scrCom/sketch/txture.jpg") });
+                mtl = new THREE.MeshLambertMaterial({ map: THREE.TextureLoader("scrCom/sketch/txture.jpg") });
                 resolve(materials, mtl);
             }, undefined, function ( error ) { console.error( error );
             })
