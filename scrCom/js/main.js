@@ -70,7 +70,7 @@ loader.load('scrCom/sketch/vvt.dae', function(apart){
     // var material = new THREE.MeshFaceMaterial(null);
     // apartModel = new THREE.Mesh(geometry, material);
     // apart.scale.set(0.5,0.5,0.5);
-    apart.position.y +=0.5;
+    // apart.position.y +=0.5;
     scene.add(apart);
 });
 renderer.render(scene,camera);
