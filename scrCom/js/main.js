@@ -75,7 +75,7 @@ new Promise((resolve)=>{
         resolve(mtlloader);
     }).then((materials)=>{
         
-        loader.setMaterial(materials);
+        //loader.setMaterial(materials);
         loader.load('scrCom/sketch/vvt.obj',(object)=>{
             scene.add(object);
         }, undefined, function ( error ) { console.error( error ); })
