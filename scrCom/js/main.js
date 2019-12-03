@@ -14,7 +14,7 @@ let loader = new THREE.GLTFLoader();
 loader.load('scr/Com/sketch/vvt.gltf',function(gltf){
     scene.add(gltf.scene);
     renderer.render(scene, camera);
-})
+}, undefined, function ( error ) { console.error( error );})
 }
 
 // // import { ColladaLoader } from 'scrCom/js/ColladaLoader.js';
