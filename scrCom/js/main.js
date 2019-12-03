@@ -73,4 +73,3 @@ loader.load('scrCom/sketch/vvt1.dae', function(apart){
     // apart.position.y +=0.5;
     scene.add(apart);
 });
-renderer.render(scene,camera);
