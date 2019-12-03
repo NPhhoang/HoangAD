@@ -66,11 +66,11 @@ var ambientLight = new THREE.AmbientLight(0x111111);
 var loader = new THREE.ColladaLoader();
 //loader.setTranscoderPath('scrCom/sketch/');
 //loader.detectSupport(render);
-loader.load('scrCom/sketch/vvt.dae', function(geometry, materials){
-    var material = new THREE.MeshFaceMaterial(null);
-    apartModel = new THREE.Mesh(geometry, material);
-    apartModel.scale.set(0.5,0.5,0.5);
-    apartModel.position.y +=0.5;
-    scene.add(apartModel);
+loader.load('scrCom/sketch/vvt.dae', function(apart){
+    // var material = new THREE.MeshFaceMaterial(null);
+    // apartModel = new THREE.Mesh(geometry, material);
+    apart.scale.set(0.5,0.5,0.5);
+    apart.position.y +=0.5;
+    scene.add(apart);
 });
-
+renderer.render(scene,camera);
