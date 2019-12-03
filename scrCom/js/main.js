@@ -80,7 +80,7 @@ document.body.appendChild( renderer.domElement );
             })
         }).then((materials,mtl)=>{
                 materials.preload();
-                mtl.preload();
+                //mtl.preload();
             loader.setMaterials(materials);            
             loader.load('scrCom/sketch/vvt.obj',(object)=>{
                 apart = object;
