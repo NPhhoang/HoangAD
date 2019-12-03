@@ -65,9 +65,9 @@ var ambientLight = new THREE.AmbientLight(0x111111);
  scene.add( light );
 
  const loader = new THREE.OBJLoader();
- loader.setPath('scrCom/sketch/');
+ //loader.setPath('scrCom/sketch/');
  var mtlloader// = new THREE.MTLLoader();
- mtlloader.setPath('scrCom/sketch/');
+ //mtlloader.setPath('scrCom/sketch/');
 
 new Promise((resolve)=>{
     //loader.load('vvt.obj'), (obj)=>{
@@ -76,7 +76,7 @@ new Promise((resolve)=>{
     }).then((materials)=>{
         materials.preload();
         loader.setMaterial(materials);
-        loader.load('vvt.obj',(object)=>{
+        loader.load('scrCom/sketch/vvt.obj',(object)=>{
             scene.add(object);
         })
     })
