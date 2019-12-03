@@ -69,17 +69,21 @@ var ambientLight = new THREE.AmbientLight(0x111111);
  var mtlloader// = new THREE.MTLLoader();
  //mtlloader.setPath('scrCom/sketch/');
 
-new Promise((resolve)=>{
-    //loader.load('vvt.obj'), (obj)=>{
-        mtlloader = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
-        resolve(mtlloader);
-    }).then((materials)=>{
+ loader.load('scrCom/sketch/vvt.obj',(object)=>{
+    scene.add(object);
+}, undefined, function ( error ) { console.error( error ); });
+
+// new Promise((resolve)=>{
+//     //loader.load('vvt.obj'), (obj)=>{
+//         mtlloader = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
+//         resolve(mtlloader);
+//     }).then((materials)=>{
         
-        //loader.setMaterial(materials);
-        loader.load('scrCom/sketch/vvt.obj',(object)=>{
-            scene.add(object);
-        }, undefined, function ( error ) { console.error( error ); })
-    })
+//         loader.setMaterial(materials);
+//         loader.load('scrCom/sketch/vvt.obj',(object)=>{
+//             scene.add(object);
+//         }, undefined, function ( error ) { console.error( error ); })
+//     })
 
 // var loader = new THREE.GLTF();
 // //loader.setTranscoderPath('scrCom/sketch/');
