@@ -36,7 +36,7 @@
 
 //             animate();
 
-           
+let apart;           
 var scene = new THREE.Scene();
 // scene.background = new THREE.Color(0xdddddd);
 var camera = new THREE.PerspectiveCamera( 75, window.innerWidth /     window.innerHeight, 0.1, 1000 );
@@ -50,7 +50,7 @@ hlight = new THREE.AmbientLight(0x404040,100);
             directionLight.position.set(0,1,0);
             directionLight.castShadow = true;
             scene.add(directionLight);
-            scene.background = new THREE.Color(0xdddddd);
+            //scene.background = new THREE.Color(0xdddddd);
 // hlight = new THREE.AmbientLight(0x404040,100);
 // camera.rotation.y = 45/180*Math.PI;
 // camera.position.x = 100;
@@ -65,7 +65,7 @@ camera.position.z = 2;
 // scene.add(directionLight);
 var renderer = new THREE.WebGLRenderer({antialias:true});
 renderer.setSize( window.innerWidth, window.innerHeight );
-renderer.setClearColor(0x00ff00);
+//renderer.setClearColor(0x00ff00);
 document.body.appendChild( renderer.domElement );
 
  const loader = new THREE.OBJLoader();
@@ -74,14 +74,18 @@ document.body.appendChild( renderer.domElement );
  //mtlloader.setPath('scrCom/sketch/');
  new Promise((resolve)=>{
             mtlloader.load('scrCom/sketch/vvt.mtl',(materials)=>{
-                resolve(materials);
+                mtl = new THREE.MeshLambertMaterial({ map: THREE.ImageUtils.loadTexture("scrCom/sketch/txture.jpg") });
+                resolve(materials, mtl);
             }, undefined, function ( error ) { console.error( error );
             })
-        }).then((materials)=>{
+        }).then((materials,mtl)=>{
                 materials.preload();
-            loader.setMaterials(materials);
+                mtl.preload();
+            loader.setMaterials(materials);            
             loader.load('scrCom/sketch/vvt.obj',(object)=>{
-                scene.add(object);
+                apart = object;
+                apart.materials = mtl
+                scene.add(apart);
 }, undefined, function ( error ) { console.error( error ); })});
 
 
