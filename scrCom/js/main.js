@@ -55,7 +55,7 @@ hlight = new THREE.AmbientLight(0x404040,100);
 // camera.rotation.y = 45/180*Math.PI;
 // camera.position.x = 100;
 // camera.position.y=100;
-camera.position.set(0,100,0);
+camera.position.set(0,5,0);
 camera.lookAt(scene.position);
 camera.position.z = 2;
 // scene.add(hlight);
