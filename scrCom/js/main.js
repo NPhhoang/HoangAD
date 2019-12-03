@@ -63,13 +63,16 @@ var ambientLight = new THREE.AmbientLight(0x111111);
  light.position.set( -15, 10, 15 );
  scene.add( light );
 
-var loader = new THREE.ColladaLoader();
-//loader.setTranscoderPath('scrCom/sketch/');
-//loader.detectSupport(render);
-loader.load('scrCom/sketch/vvt2.dae', function(apart){
-    // var material = new THREE.MeshFaceMaterial(null);
-    // apartModel = new THREE.Mesh(geometry, material);
-    // apart.scale.set(0.5,0.5,0.5);
-    // apart.position.y +=0.5;
-    scene.add(apart.Scene);
-});
+ var loader = new THREE.GLTFLoader(); loader.load( 'scrCom/sketch/vvt.glb', function ( gltf ) { scene.add( gltf.scene ); }, undefined, function ( error ) { console.error( error ); } );
+
+// var loader = new THREE.GLTF();
+// //loader.setTranscoderPath('scrCom/sketch/');
+// //loader.detectSupport(render);
+// loader.load('scrCom/sketch/vvt2.dae', function(apart){
+//     // var material = new THREE.MeshFaceMaterial(null);
+//     // apartModel = new THREE.Mesh(geometry, material);
+//     // apart.scale.set(0.5,0.5,0.5);
+//     // apart.position.y +=0.5;
+//     var material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
+//     scene.add(apart.Scene);
+// });
