@@ -71,5 +71,5 @@ loader.load('scrCom/sketch/vvt2.dae', function(apart){
     // apartModel = new THREE.Mesh(geometry, material);
     // apart.scale.set(0.5,0.5,0.5);
     // apart.position.y +=0.5;
-    scene.add(apart.scene);
+    scene.add(apart.Scene);
 });
