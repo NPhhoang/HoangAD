@@ -13,7 +13,7 @@ document.body.appendChild(renderer.domElement);
 
 let loader = new THREE.GLTFLoader();
 loader.load('scrCom/sketch/vvt.gltf',function(gltf){
-    apart = gltf.scenes.children[0];
+    apart = gltf.scenes[0];
     apart.scale.set(0.5,0.5,0.5);
     scene.add(gltf.scenes[0]);
     renderer.render(scene, camera);
