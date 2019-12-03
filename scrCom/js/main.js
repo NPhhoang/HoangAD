@@ -12,7 +12,7 @@ document.body.appendChild(renderer.domElement);
 
 let loader = new THREE.GLTFLoader();
 loader.load('scrCom/sketch/vvt.gltf',function(gltf){
-    scene.add(gltf.scene[0]);
+    scene.add(gltf.scenes);
     renderer.render(scene, camera);
 }, undefined, function ( error ) { console.error( error );})
 };
