@@ -18,7 +18,7 @@ var scene = new THREE.Scene();
 			document.body.appendChild( renderer.domElement );
 
 			var geometry = new THREE.OBJLoader();
-            geometre.load('scrCom/sketch/vvt.obj');
+            geometry.load('scrCom/sketch/vvt.obj');
 			var material = new THREE.MeshBasicMaterial( { color: 0xffffff } );
 			var cube = new THREE.Mesh( geometry, material );
 			scene.add( cube );
