@@ -18,11 +18,13 @@ var scene = new THREE.Scene();
 			renderer.setSize( window.innerWidth, window.innerHeight );
 			document.body.appendChild( renderer.domElement );
 
-			var geometry = new THREE.OBJLoader();
-            geometry.load('scrCom/sketch/vvt.obj');
-			var material = new THREE.MeshBasicMaterial( { color: 0xffffff } );
+			var loader = new THREE.OBJLoader();
+            loader.load('scrCom/sketch/vvt.obj', function(geometry){
+                var material = new THREE.MeshBasicMaterial( { color: 0xffffff } );
 			var cube = new THREE.Mesh( geometry, material );
 			scene.add( cube );
+            });
+			
 
 			camera.position.z = 3;
 
