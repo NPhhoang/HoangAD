@@ -95,7 +95,6 @@ var geometry = new THREE.BoxGeometry( 1, 1, 1 );
 			scene.add( cube );
 renderer.render( scene, camera );
 
-
 // new Promise((resolve)=>{
 //     //loader.load('vvt.obj'), (obj)=>{
 //         mtlloader = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
