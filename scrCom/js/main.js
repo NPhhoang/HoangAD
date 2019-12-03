@@ -74,7 +74,7 @@ new Promise((resolve)=>{
         mtlloader = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
         resolve(mtlloader);
     }).then((materials)=>{
-        materials.preload();
+        
         loader.setMaterial(materials);
         loader.load('scrCom/sketch/vvt.obj',(object)=>{
             scene.add(object);
