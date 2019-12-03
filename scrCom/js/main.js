@@ -71,7 +71,7 @@ document.body.appendChild( renderer.domElement );
  var mtlloader = new THREE.MTLLoader();
  //mtlloader.setPath('scrCom/sketch/');
  new Promise((resolve)=>{
-            mtlloader.load('scrCom/sketch/vavt.mtl',(materials)=>{
+            mtlloader.load('scrCom/sketch/vvt.mtl',(materials)=>{
                 resolve(materials);
             }, undefined, function ( error ) { console.error( error );
             })}).then((materials)=>{
