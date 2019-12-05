@@ -37,9 +37,9 @@ document.body.appendChild(renderer.domElement);
 let loader = new THREE.GLTFLoader();
 loader.load('scrCom/sketch/vvt.gltf',function(gltf){
     apart = gltf.scenes;
-    apart.scale.set(4,4,4);
-    apart.castShadow = true;
-    scene.add(apart);
+    apart[0].scale.set(4,4,4);
+    apart[0].castShadow = true;
+    scene.add(apart[0]);
     //var animation = new THREE.Animation(apart, apart.     geometry.animation);
     //animation.play();
     //child.scale.set(0.15, 0.15, 0.15);
