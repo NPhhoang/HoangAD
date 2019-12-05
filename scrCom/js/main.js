@@ -23,6 +23,7 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
 
+
 let loader = new THREE.ColladaLoader();
 loader.load('scrCom/sketch/vvt.dae',function(colla){
 
@@ -47,3 +48,21 @@ function onResize() {
 
 init();
 window.addEventListener('resize', onResize, false)
+
+var controls = new THREE.TrackballControls(camera, renderer.domElement);
+controls.rotateSpeed = 1.0;
+controls.zoomSpeed = 1.0;
+controls.panSpeed = 1.0;
+controls.maxDistance=60;
+controls.minDistance=5;
+controls.target.set(15,0,0);
+var clock = new THREE.Clock();
+function animate() {
+var delta = clock.getDelta();
+controls.update(delta);
+requestAnimationFrame(animate);
+renderer.render(scene, camera);
+}
+
+//controls.addEventListener('change',render);
+animate()
