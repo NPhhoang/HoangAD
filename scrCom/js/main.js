@@ -48,7 +48,7 @@ loader.load('scrCom/sketch/vvt.gltf',function(gltf){
     //child.position.x = -100;
     //child.position.y = -60; 
     renderer.render(scene, camera);
-}, undefined, function ( error ) { console.error( error );})
+}, 'scrCom/sketch/', function ( error ) { console.error( error );})
 };
 
 init();
