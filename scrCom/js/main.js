@@ -31,7 +31,7 @@ light3.position.set(0,0,0);
 scene.add(light, light1, light2, light3);
 
 renderer = new THREE.WebGLRenderer({antialias:true});
-renderer.setClearColorHex(0xEEEEEE);
+renderer.setClearColor(0xEEEEEE);
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
