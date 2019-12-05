@@ -31,14 +31,21 @@ light3.position.set(0,0,0);
 scene.add(light, light1, light2, light3);
 
 renderer = new THREE.WebGLRenderer({antialias:true});
+renderer.setClearColorHex(0xEEEEEE);
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
 let loader = new THREE.GLTFLoader();
 loader.load('scrCom/sketch/vvt.gltf',function(gltf){
-    apart = gltf.scenes[0];
-    // apart.scale.set(0.5,0.5,0.5);
-    scene.add(gltf.scenes[0]);
+    apart = gltf.scene[0];
+    apart.scale.set(4,4,4);
+    scene.add(apart);
+    var animation = new THREE.Animation(apart, apart.     geometry.animation);
+    animation.play();
+    child.scale.set(0.15, 0.15, 0.15);
+    child.rotation.x = -0.5 * Math.PI;
+    child.position.x = -100;
+    child.position.y = -60; 
     renderer.render(scene, camera);
 }, undefined, function ( error ) { console.error( error );})
 };
