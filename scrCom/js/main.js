@@ -9,7 +9,6 @@ camera = new THREE.PerspectiveCamera(40, window.innerWidth/window.innerHeight, 1
  //camera.position.x = 2;
 // camera.position.y = 2;
 // camera.position.z = 2;
-
 hlight = new THREE.AmbientLight(0x404040, 100);
 scene.add(hlight);
 
