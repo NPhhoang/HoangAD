@@ -1,5 +1,5 @@
 let scene, camera, renderer;
-let apart;
+let apart,gltfL;
 function init() {
 scene= new THREE.Scene();
 scene.background = new THREE.Color(0xdddddd);
@@ -36,14 +36,15 @@ document.body.appendChild(renderer.domElement);
 
 let loader = new THREE.GLTFLoader();
 loader.load('scrCom/sketch/vvt.gltf',function(gltf){
-    apart = gltf.scenes;
-    apart[0].scale.set(4,4,4);
-    apart[0].castShadow = true;
-    scene.add(apart[0]);
+    gltfL = gltf;
+    apart = gltf.scenes[0];
+    apart.scale.set(4,4,4);
+    apart.castShadow = true;
+    scene.add(apart);
     //var animation = new THREE.Animation(apart, apart.     geometry.animation);
     //animation.play();
     //child.scale.set(0.15, 0.15, 0.15);
-    apart[0].rotation.x = -0.5 * Math.PI;
+    apart.rotation.x = -0.5 * Math.PI;
     //child.position.x = -100;
     //child.position.y = -60; 
     renderer.render(scene, camera);
