@@ -1,4 +1,3 @@
-
 let scene, camera, renderer;
 let apart;
 function init() {
