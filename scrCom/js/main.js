@@ -39,7 +39,7 @@ document.body.appendChild(renderer.domElement);
 let loader = new THREE.GLTFLoader();
 loader.load('scrCom/sketch/vvt.gltf',function(gltf){
     apart = gltf.scene[0];
-    apart.scale.set(4,4,4);
+    //apart.scale.set(4,4,4);
     scene.add(apart);
     var animation = new THREE.Animation(apart, apart.     geometry.animation);
     animation.play();
