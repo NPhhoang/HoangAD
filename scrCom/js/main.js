@@ -43,7 +43,7 @@ loader.load('scrCom/sketch/vvt.gltf',function(gltf){
     //var animation = new THREE.Animation(apart, apart.     geometry.animation);
     //animation.play();
     //child.scale.set(0.15, 0.15, 0.15);
-    apart.rotation.x = -0.5 * Math.PI;
+    apart[0].rotation.x = -0.5 * Math.PI;
     //child.position.x = -100;
     //child.position.y = -60; 
     renderer.render(scene, camera);
