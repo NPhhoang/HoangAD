@@ -4,7 +4,7 @@ let apart,gltfL;
 function init() {
 scene= new THREE.Scene();
 scene.background = new THREE.Color(0xdddddd);
-camera = new THREE.PerspectiveCamera(40, window.innerWidth/window.innerHeight, 1, 5000);
+camera = new THREE.PerspectiveCamera(40,(window.innerWidth>window.innerHeight)? window.innerWidth/window.innerHeight: window.innerHeight/window.innerWidth, 1, 5000);
 camera.position.set(35,10,-30);
 
 camera.rotation.set(0,0,540/180*Math.PI)
@@ -17,10 +17,17 @@ drLight.position.set(35,10,-30).normalize();
 drLight.castShadow = true;
 scene.add(drLight);
 
-renderer = new THREE.WebGLRenderer({antialias:true});
+renderer = new THREE.WebGLRenderer({antialias:true,canvas: apartCan});
 renderer.setClearColor(0xEEEEEE);
-renderer.setSize(window.innerWidth, window.innerHeight);
-document.body.appendChild(renderer.domElement);
+if (window.innerWidth<560) {
+    renderer.setSize(window.innerWidth*10/15, window.innerHeight*36/150);
+} else if(window.innerWidth<window.innerHeight){
+    renderer.setSize(window.innerWidth*48/150, window.innerHeight*36/150);
+}else{
+    renderer.setSize(window.innerWidth*36/150, window.innerHeight*48/150);
+}
+
+document.querySelector('#dCan').appendChild(renderer.domElement);
 
 
 
@@ -40,16 +47,22 @@ loader.load('scrCom/sketch/vvt.dae',function(colla){
 }, undefined , function ( error ) { console.error( error );})
 };
 function onResize() {
-    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.aspect = (window.innerWidth>window.innerHeight)? window.innerWidth/window.innerHeight: window.innerHeight/window.innerWidth;
     camera.updateProjectionMatrix();
-    renderer.setSize( window.innerWidth, window.innerHeight );
+    if (window.innerWidth<560) {
+        renderer.setSize(window.innerWidth*10/15, window.innerHeight*36/150);
+    } else if(window.innerWidth<window.innerHeight){
+        renderer.setSize(window.innerWidth*48/150, window.innerHeight*36/150);
+    }else{
+        renderer.setSize(window.innerWidth*36/150, window.innerHeight*48/150);
+    }
     renderer.render(scene, camera);
 }
-
 init();
 window.addEventListener('resize', onResize, false)
 
-var controls = new THREE.TrackballControls(camera, renderer.domElement);
+var controls = new THREE.OrbitControls(camera, renderer.domElement);
+controls.autoRotate= true;
 controls.rotateSpeed = 1.0;
 controls.zoomSpeed = 1.0;
 controls.panSpeed = 1.0;
@@ -63,6 +76,20 @@ controls.update(delta);
 requestAnimationFrame(animate);
 renderer.render(scene, camera);
 }
-
+controls.addEventListener('start', function(){
+    clearTimeout(autorotateTimeout);
+    controls.autoRotate = false;
+  });
+  let autorotateTimeout;
+  // restart autorotate after the last interaction & an idle time has passed
+  this.controls.addEventListener('end', function(){
+    autorotateTimeout = setTimeout(function(){
+      controls.autoRotate = true;
+    }, 1500);
+  });
 //controls.addEventListener('change',render);
 animate()
+
+// const int x = f() ? 10 : 2;
+
+// X::X() : n_(n > 0 ? 2 * n : 0) { }
