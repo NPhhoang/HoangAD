@@ -24,10 +24,14 @@ if (window.innerWidth<560) {
 } else if(window.innerWidth<window.innerHeight){
     renderer.setSize(window.innerWidth*48/150, window.innerHeight*36/150);
 }else{
+    if (window.innerWidth<1139) {
+        renderer.setSize(window.innerWidth*72/150, window.innerHeight*54/150);
+    }
+    else{
     renderer.setSize(window.innerWidth*36/150, window.innerHeight*48/150);
-}
+}}
 
-document.querySelector('#dCan').appendChild(renderer.domElement);
+document.querySelector('#dCan').prepend(renderer.domElement);
 
 
 
@@ -54,7 +58,12 @@ function onResize() {
     } else if(window.innerWidth<window.innerHeight){
         renderer.setSize(window.innerWidth*48/150, window.innerHeight*36/150);
     }else{
+        if (window.innerWidth<1139) {
+            renderer.setSize(window.innerWidth*72/150, window.innerHeight*54/150);
+        }
+        else{
         renderer.setSize(window.innerWidth*36/150, window.innerHeight*48/150);
+    }
     }
     renderer.render(scene, camera);
 }
